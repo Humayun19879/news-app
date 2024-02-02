@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 
 
+
 export default class News extends Component {
   static defaultProps = {
     country: "us",
@@ -17,18 +18,26 @@ export default class News extends Component {
     category: PropTypes.string,
 
   }
-  constructor() {
-    super();
+
+  constructor(category) {
+    super(category);
     this.state = {
-      articles: [],
+   
+    articles: [],
       loading: false,
       page: 1,
       totalarticles: [],
 
 
-
     }
+    document.title=`${this.props.category.toUpperCase()}-NEWS`
   }
+
+ 
+
+
+
+
 
   async updatenews() {
     this.setState({ loading: true });
@@ -66,20 +75,14 @@ export default class News extends Component {
 
 
 
-
-
-
-
-
-
-
   render() {
+   
 
     return (
       <>
      
         <div className="container my-5 flex">
-          <h1 className='my-4'>TOP HEADLINES-</h1>
+          <h1 className='my-4'>TOP NEWS-{this.props.category.toUpperCase()}</h1>
           {this.state.loading && <Spinner />}
 
           <div className="row">

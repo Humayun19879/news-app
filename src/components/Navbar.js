@@ -31,7 +31,7 @@ export default class Navbar extends Component {
                     CATEGORIES
                   </Link>
                   <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" to="/buisness">BUISNESS</Link></li>
+                   
                     <li><Link className="dropdown-item" to="/entertainment">ENTERTAINMENT</Link></li>
                     <li><Link className="dropdown-item" to="/">GENERAL</Link></li>
                     <li><Link className="dropdown-item" to="/health">HEALTH</Link></li>
@@ -43,8 +43,8 @@ export default class Navbar extends Component {
                 
               </ul>
               <form className="d-flex" role="search" >
-                <input className="form-control me-2" onKeyUp={search} id='search' type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-success"  type="submit">Search</button>
+                <input className="form-control me-2"  id='search' type="search" placeholder="Search" aria-label="Search" />
+                <Link className="btn btn-outline-success" to="/search" onClick={search}  type="submit" >Search</Link>
               </form>
               <div className={`form-check form-switch text-${color} `}>
                 <input className="form-check-input" onClick={enablemode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
